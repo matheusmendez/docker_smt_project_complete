@@ -1,0 +1,38 @@
+table,th,td{
+    border:1px solid rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    color:#ffffff;
+    border-radius: 5px;
+    padding: 10px  5px;
+    border-spacing:10px;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 1000px;
+}
+
+
+
+body{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    margin: 30px;
+    align-items: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.inputarea{
+    padding: 20px 20px 20px 20px;
+    align-items: column;
+    padding-bottom: 3%;
+    justify-content: center;
+    margin: 20px;
+    height: 50%;
+    margin-left: 20px;
+
+}

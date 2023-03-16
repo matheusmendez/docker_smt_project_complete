@@ -1,0 +1,98 @@
+.App {
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around 20px 20px 20px 20px;
+  }
+  
+  .sensor--div{
+    display: flex;
+    margin: 30px;
+    margin-left: 30px;
+    flex-direction: row;
+  }
+  
+  .sensor--div2{
+    display: flex;
+    margin: 40px;
+    margin-left: 35px;
+    justify-content: space-around 20px 20px 20px 20px;
+    flex-direction: row;
+  }
+  
+  .sensor--dry{
+    float: left;
+    padding-right: 9em;
+  }
+  
+  .sensor--amb1{
+    float: left;
+    padding-right: 9em;
+  }
+  
+  .sensor--amb3{
+    float: right;
+    padding-left: 9em;
+  }
+  
+  .App--container {
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+  }
+  
+  .bottom{
+      cursor: pointer;
+      border-radius: 5px;
+      margin: auto;
+      background-color: #00074241;
+      color: white;
+      height: 50px;
+      width: 90px;}
+  
+  .register--container{
+      display: grid;
+      grid-gap: 5px 8px;
+      align-items: center;
+      flex-direction: column;
+      margin: 0px;
+      gap: 20px;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
