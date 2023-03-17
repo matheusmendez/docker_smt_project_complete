@@ -61,7 +61,10 @@ app.get("/getamb3", (req, res)=>{
     })
 });
 
+const HOST = process.env.API_HOST || "0.0.0.0"
+const PORT = process.env.API_PORT || "3001"
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log("Tudo certo!")
+    console.log(`http://${HOST}:${PORT}`)
 });

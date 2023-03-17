@@ -9,7 +9,7 @@ import {
     LinearScale,
     PointElement
 } from 'chart.js';
-    
+
 ChartJS.register(
     LineElement,
     CategoryScale,
@@ -24,7 +24,8 @@ function Table () {
 
     const [values, setValues] = useState([]);
     const [newValues, setnewValues] = useState ([]);
-    
+    const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3001";
+    console.log(baseURL);
 
     const changevalue = (event) => {
         setValues((prevevent) => ({
@@ -34,9 +35,8 @@ function Table () {
     }
     
     
-
     useEffect(() =>{
-        Axios.get("http://localhost:3001/")
+        Axios.get(baseURL)
         .then((response) => {setnewValues(response.data)})
     },[])
 
@@ -108,7 +108,7 @@ function Table () {
     return (
         <>
             <h1 className="titulo">Relatório</h1>
-
+	    <a href={"../"}> <button className='bottom'>Home</button></a>
             <div className="inputarea">
                 <h2>Inicio: </h2>
                 <input name="date_time"  type="date" value="03-23-2023" onChange={changevalue} /> 
@@ -120,7 +120,7 @@ function Table () {
                     <select name ="id_sensor" onChange={changevalue}>
                         <option  value="sensor_drybox"  >Drybox</option>
                         <option  value="sensor_geladeira" >Geladeira</option>
-                        <option  value="sensor_ambiente_1" >Ambiente 1</option>
+                        <option selected="selected"  value="sensor_ambiente_1" >Ambiente 1</option>
                         <option value="sensor_ambiente_2" >Ambiente 2</option>
                         <option value="sensor_ambiente_3" >Ambiente 3</option>
                     </select> 

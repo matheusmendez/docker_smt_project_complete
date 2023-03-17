@@ -15,8 +15,9 @@ function Home() {
   const[valueamb1, setvalueamb1] = useState ();
   const[valueamb2, setvalueamb2] = useState ();
   const[valueamb3, setvalueamb3] = useState ();
-  
-  const baseURL = process.env.REACT_APP_API_BASE_URL ||"http://localhost:3001"
+
+  const baseURL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3001"
+  console.log(baseURL);
 
   useEffect(() => {
     Axios.get(`${baseURL}/get`)
@@ -56,7 +57,7 @@ function Home() {
   /*
   setTimeout(function() {
     window.location.reload(1);
-  }, 60000); 
+  }, 60000);
 */
   return (
     <div className="App--container">
@@ -64,17 +65,16 @@ function Home() {
             <h1>
               SMD THERMOCOUPLE
             </h1>
-            <a href={`${baseURL}/dryboxtable`}>
+            <a href={"./dryboxtable"}>
               <button className='bottom'>Relatório</button>
             </a>
-            
           </div>
           <div className='sensor--div2'>
               <div className='sensor--amb1'>
                 {typeof valueamb1 !=="undefined" &&
                     valueamb1.map((value) =>{
                     return <Cards3 key={value.id} valuesen={valueamb1}
-                    setlistsen={setvalueamb1} temp={value.temp_value} 
+                    setlistsen={setvalueamb1} temp={value.temp_value}
                     humi={value.humi_value}  time={value.date_time}></Cards3>
                     })}
                 </div>
@@ -82,7 +82,7 @@ function Home() {
                 {typeof valueamb2 !=="undefined" &&
                     valueamb2.map((value) =>{
                     return <Cards4 key={value.id} valuesen={valueamb2}
-                    setlistsen={setvalueamb2} temp={value.temp_value} 
+                    setlistsen={setvalueamb2} temp={value.temp_value}
                     humi={value.humi_value}></Cards4>
                     })}
                 </div>
@@ -90,7 +90,7 @@ function Home() {
                 {typeof valueamb3 !=="undefined" &&
                     valueamb3.map((value) =>{
                     return <Cards5 key={value.id} valuesen={valueamb3}
-                    setlistsen={setvalueamb3} temp={value.temp_value} 
+                    setlistsen={setvalueamb3} temp={value.temp_value}
                     humi={value.humi_value}></Cards5>
                     })}
                 </div>
@@ -100,7 +100,7 @@ function Home() {
                 {typeof valuedry !=="undefined" &&
                   valuedry.map((value) =>{
                   return <Cards key={value.id} valuesen={valuedry}
-                  setlistsen={setvaluedry} temp={value.temp_value} 
+                  setlistsen={setvaluedry} temp={value.temp_value}
                   humi={value.humi_value}></Cards>
                   })}
               </div>
@@ -108,12 +108,11 @@ function Home() {
               {typeof valuegel !=="undefined" &&
                   valuegel.map((value) =>{
                   return <Cards2 key={value.id} valuesen={valuegel}
-                  setlistsen={setvaluegel} temp={value.temp_value} 
+                  setlistsen={setvaluegel} temp={value.temp_value}
                   humi={value.humi_value}></Cards2>
                   })}
               </div>
           </div>
-            
     </div>
   );
 }

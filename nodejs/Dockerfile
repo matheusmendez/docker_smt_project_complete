@@ -6,4 +6,5 @@ WORKDIR /app
 
 COPY ./app/ /app/
 
-RUN npm install --production
+RUN npm install 
+#--production

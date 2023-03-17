@@ -1,16 +1,17 @@
 # Stage 1
-FROM node:latest as build-stage
+FROM node:alpine as build-stage
 
 #ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ./app/ /app/
-
+COPY ./app/package*.json ./
 RUN yarn install
 
-#ARG REACT_APP_API_BASE_URL
-#ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
+COPY ./app/ /app/
+
+ARG REACT_APP_API_BASE_URL
+ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
 
 RUN yarn run build
 
@@ -21,3 +22,4 @@ RUN yarn run build
 #EXPOSE $REACT_DOCKER_PORT
 
 #CMD nginx -g 'daemon off;'
+
